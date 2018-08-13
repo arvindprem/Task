@@ -1,8 +1,16 @@
 package com.mytask.Task.model;
 
+import java.sql.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-@Document(collection="Continent")
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+@Data
+
+
+@AllArgsConstructor
 public class TaskContinent {
 @Id
 	
@@ -10,25 +18,6 @@ public class TaskContinent {
 	
 	String Label;
 	
-	public  TaskContinent(){}
 	
-	public TaskContinent(String Label)
-	{
-		this.Label=Label;
-	}
-	
-	
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getLabel() {
-		return Label;
-	}
-	public void setLabel(String label) {
-		Label = label;
-	}
 }
 
