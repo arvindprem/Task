@@ -9,7 +9,7 @@ import lombok.Data;
 
 
 @AllArgsConstructor
-public class Allowsurveys<Person> {
+public class Allowsurveys {
 	
 	@Id
 	String id;
