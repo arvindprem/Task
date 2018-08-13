@@ -18,6 +18,8 @@ public class TaskActivitypole {
 	String Nb_Licence;
 	Date Expiration_date;
 	
+	public TaskActivitypole() {}
+	
 	public TaskActivitypole(String Label , String Address, Number Phone, String Responsible_name, String Responsible_email,String Nb_Licence, Date Expiration_date )
 	{
 		this.Label=Label;

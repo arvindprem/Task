@@ -14,6 +14,7 @@ public class TaskGroup {
 	String Label;
 	String Nb_Licence;
 	Date Expiration_date;
+	public TaskGroup() {}
 	
 	public TaskGroup(String Label,String Nb_Licence,Date Expiration_date)
 	{
