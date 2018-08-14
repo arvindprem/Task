@@ -47,6 +47,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>5.0.4.RELEASE</version>
+			</plugin>
 		</plugins>
 	</build>
 
