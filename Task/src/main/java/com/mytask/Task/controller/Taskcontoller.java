@@ -23,7 +23,7 @@ public class Taskcontoller {
 	}
 
 	@RequestMapping(value="/{id}" ,method= RequestMethod.GET)
-	public  PoopyUser getPoppyUserbyid(@PathVariable("id") Object id) {
+	public  PoopyUser getPoppyUserbyid(@PathVariable("id") String id) {
 	return (PoopyUser) repository .findByid(id);
 }
 }
