@@ -10,13 +10,19 @@ import lombok.Data;
 
 @Data
 
-
 @AllArgsConstructor
-public class TaskPoppyFeatures {
+
+@Document(collection= "Poppy client database")
+public class PoopyUser {
 	@Id
-	String id;
-	
-	String Label;
+	private String id;
+	private String name;
+	private String Last_name;
+	private Date Expiration_date;
 	
 	
 }
+
+
+	
+	

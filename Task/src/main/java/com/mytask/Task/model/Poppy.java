@@ -1,8 +1,10 @@
 package com.mytask.Task.model;
 
 import java.util.Date;
+import java.util.List;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -10,13 +12,13 @@ import lombok.Data;
 
 
 @AllArgsConstructor
-public class Taskpopy {
-	@Id
-	String id;
+public class Poppy {
+	
 	String Version;
 	Date Creation_date;
 	String Download_path;
-	
+	@DBRef
+	private List<PoopyUser>Poppyuser_id; 
 	
 	
 }
