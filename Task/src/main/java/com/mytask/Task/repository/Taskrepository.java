@@ -8,11 +8,11 @@ import org.springframework.data.mongodb.repository.Query;
 
 public interface Taskrepository extends MongoRepository<User, String>{
 	
-	List<User> findByid(Object id);
+	List<User> findByid(String id);
 
-	@Query("{'TaskActivitypole.Label.Address.Expiration_date','Tasksociety.Label.Address.Expiration_date','TaskPoppyFeature.Label','TaskSurvey.Label','Allowsurveys.Expiration_date','TaskContinent.Label','TaskCountry.Label'TaskGroup.Label','Taskpoppy.Version',Taskuser.name': ?0}")
+	@Query("{'ActivityPole.id','Society.id','Poppyfeature.id','Surveys.id','Continent.id','Country.id,'Group.id','PoppyUser.id': ?0}")
 	
 	
-	List<User> findByLabel(String Label);
+	
 	List<User> findByAdress(String Adress);
 }
