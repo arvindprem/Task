@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mytask.Task.model.Taskuser;
+import com.mytask.Task.model.PoopyUser;
 import com.mytask.Task.repository.Taskrepository;
 @RestController
 @RequestMapping("")
@@ -17,13 +17,13 @@ public class Taskcontoller {
 	private Taskrepository repository;
 	
 	@RequestMapping(value="",method=RequestMethod.GET)
-	public List<User> getallTaskuser() 
+	public List<User> getallPoppyuser() 
 	{
 		return repository.findAll();
 	}
 
 	@RequestMapping(value="/{id}" ,method= RequestMethod.GET)
-	public  getTaskuserbyid(@PathVariable("id") Object id) {
-	return (Taskuser) repository .findByid(id);
+	public  PoopyUser getPoppyUserbyid(@PathVariable("id") Object id) {
+	return (PoopyUser) repository .findByid(id);
 }
 }
