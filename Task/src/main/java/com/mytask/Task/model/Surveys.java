@@ -21,5 +21,5 @@ public class Surveys{
 	private String	DownloadPath;
 
 	@DBRef
-	private List<PoopyUser>PoppyUser_id; 
+	private List<PoppyUser>PoppyUser_id; 
 }

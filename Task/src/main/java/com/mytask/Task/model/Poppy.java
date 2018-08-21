@@ -18,7 +18,7 @@ public class Poppy {
 	Date Creation_date;
 	String Download_path;
 	@DBRef
-	private List<PoopyUser>Poppyuser_id; 
+	private List<PoppyUser>Poppyuser_id; 
 	
 	
 }

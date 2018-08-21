@@ -25,6 +25,6 @@ public class ActivityPole{
 	private String Nb_Licence;
 	private Date Expiration_date;
 	@DBRef
-	private List<PoopyUser>Poppyuser_id; 
+	private List<PoppyUser>Poppyuser_id; 
 }
 

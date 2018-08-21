@@ -1,6 +1,6 @@
 package com.mytask.Task.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -13,7 +13,7 @@ import lombok.Data;
 @AllArgsConstructor
 
 @Document(collection= "Poppy client database")
-public class PoopyUser {
+public class PoppyUser {
 	@Id
 	private String id;
 	private String name;
