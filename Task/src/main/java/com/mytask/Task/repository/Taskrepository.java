@@ -18,4 +18,6 @@ public interface Taskrepository extends MongoRepository<User, String>{
 	void delete(PoppyUser deleted);
 	
 	void save(PoppyUser user);
+
+	void add(PoppyUser user);
 }
