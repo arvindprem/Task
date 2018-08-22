@@ -27,18 +27,19 @@ public class Taskcontoller {
 
 	@RequestMapping(method=RequestMethod.GET, value="/Poppy client database/{id}")
     public PoppyUser show(@PathVariable String id) {
-        return Taskrepository.findone( id) {
+		
+        return Taskrepository.findone( id) ;
 		}
-    
+	
 
 	@RequestMapping(method=RequestMethod.POST, value="/Poppy client database")
-    public PoppyUser save(@RequestBody PoppyUser user) {
-        Taskrepository.save(user);
+    public @ResponseBody PoppyUser addPoppyUser(@PathVariable String id, @RequestBody PoppyUser user) {
+        Taskrepository.add(user);
 
         return user;
     }
 	@RequestMapping(method=RequestMethod.PUT, value="/Poppy client database/{id}")
-    public void update(@PathVariable("id") String id, @RequestBody PoppyUser user)  {
+    public @ResponseBody PoppyUser updatePoppyUser(@PathVariable String id, @RequestBody PoppyUser user)  {
         PoppyUser p = Taskrepository.findone(id);
         if(user.getName() != null)
             p.setName(user.getName());
@@ -52,11 +53,10 @@ public class Taskcontoller {
     }
 
 	@RequestMapping(method=RequestMethod.DELETE, value="/Poppy client database/{id}")
-    public void delete(@PathVariable("id") String id) {
+    public @ResponseBody void delete(@PathVariable String id) {
       PoppyUser user = Taskrepository.findone(id);
         Taskrepository.delete(user);
 
-        return "";
+        return;
     }
-}
 }
