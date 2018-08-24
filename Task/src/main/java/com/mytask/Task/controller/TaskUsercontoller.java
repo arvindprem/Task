@@ -14,7 +14,7 @@ import com.mytask.Task.model.PoppyUser;
 import com.mytask.Task.repository.Taskrepository;
 @RestController
 @RequestMapping("/Poppy client database")
-public class Taskcontoller {
+public class TaskUsercontoller {
 	@Autowired
 	private Taskrepository Taskrepository;
 	
@@ -28,11 +28,11 @@ public class Taskcontoller {
 	@RequestMapping(method=RequestMethod.GET, value="/Poppy client database/{id}")
     public PoppyUser show(@PathVariable String id) {
 		
-        return Taskrepository.findone( id) ;
+        return Taskrepository.findbyid( id) ;
 		}
 	
 
-	@RequestMapping(method=RequestMethod.POST, value="/Poppy client database")
+	@RequestMapping(method=RequestMethod.POST, value="/Poppy client database/{id}")
     public @ResponseBody PoppyUser addPoppyUser(@PathVariable String id, @RequestBody PoppyUser user) {
         Taskrepository.add(user);
 
@@ -40,7 +40,7 @@ public class Taskcontoller {
     }
 	@RequestMapping(method=RequestMethod.PUT, value="/Poppy client database/{id}")
     public @ResponseBody PoppyUser updatePoppyUser(@PathVariable String id, @RequestBody PoppyUser user)  {
-        PoppyUser p = Taskrepository.findone(id);
+        PoppyUser p = Taskrepository.findbyid(id);
         if(user.getName() != null)
             p.setName(user.getName());
         if(user.getLast_name() != null)
@@ -51,10 +51,10 @@ public class Taskcontoller {
         Taskrepository.save(p);
         return user;
     }
-
+  
 	@RequestMapping(method=RequestMethod.DELETE, value="/Poppy client database/{id}")
     public @ResponseBody void delete(@PathVariable String id) {
-      PoppyUser user = Taskrepository.findone(id);
+      PoppyUser user = Taskrepository.findbyid(id);
         Taskrepository.delete(user);
 
         return;
