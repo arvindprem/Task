@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mytask.Task.model.PoppyUser;
+import com.mytask.Task.model.User;
 import com.mytask.Task.service.ClientDbmanageuserservice;
 
 @RestController
@@ -25,9 +25,9 @@ public class Logincontroller {
 	public ModelAndView dashboard() {
 	    ModelAndView modelAndView = new ModelAndView();
 	    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	    PoppyUser user = userservice.findPoppyUserByEmail(auth.getName());
+	    User user = userservice.findUserByEmail(auth.getName());
 	    modelAndView.addObject("currentUser", user);
-	    modelAndView.addObject("fullName", "Welcome " + user.getName());
+	    modelAndView.addObject("fullName", "Welcome " + user.getFullname());
 	    modelAndView.addObject("adminMessage", "Content Available Only for Users with Admin Role");
 	    modelAndView.setViewName("dashboard");
 	    return modelAndView;
