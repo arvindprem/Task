@@ -1,9 +1,10 @@
 package com.mytask.Task.repository;
-import com.mytask.Task.model.PoppyUser;
+
+import com.mytask.Task.model.User;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface UserRepository extends MongoRepository<PoppyUser, String> {
+public interface UserRepository extends MongoRepository<User, String> {
 
-	PoppyUser findByEmail(String email);
+	User findByEmail(String email);
 }
