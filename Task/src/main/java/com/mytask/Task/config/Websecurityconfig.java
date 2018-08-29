@@ -10,20 +10,24 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import com.mytask.Task.service.ClientDbmanageuserservice;
 @Configuration
-@EnableWebsecurity
+@EnableWebSecurity
 public class Websecurityconfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-
+	
 	@Autowired
-	CustomizeAuthenticationSuccessHandler customizeAuthenticationSuccessHandler;
+	CustomAuthenticationSucesssHandler customizeAuthenticationSuccessHandler;
 	
 	@Bean
 	public UserDetailsService mongoUserDetails() {
 	    return new ClientDbmanageuserservice();
+	}
 	    
 	    @Override
 	    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -40,7 +44,6 @@ public class Websecurityconfig extends WebSecurityConfigurerAdapter {
 	            .authorizeRequests()
 	                .antMatchers("/").permitAll()
 	                .antMatchers("/login").permitAll()
-	                .antMatchers("/signup").permitAll()
 	                .antMatchers("/dashboard/**").hasAuthority("ADMIN").anyRequest()
 	                .authenticated().and().csrf().disable().formLogin().successHandler(customizeAuthenticationSuccessHandler)
 	                .loginPage("/login").failureUrl("/login?error=true")
@@ -52,6 +55,12 @@ public class Websecurityconfig extends WebSecurityConfigurerAdapter {
 	    
 	
 	}
+	    @Override
+	    public void configure(WebSecurity web) throws Exception {
+	        web
+	            .ignoring()
+	            .antMatchers("/resources/**", "/static/**", "/css/**", "/js/**", "/images/**");
+	    }
 	    
 	
 	
