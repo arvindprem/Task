@@ -11,7 +11,8 @@ import lombok.Data;
 
 @AllArgsConstructor
 
-@Document(collection= "Poppyuser")
+@Document(collection= "poppyuser")
+
 public class PoppyUser {
 	@Id
 	private String id;

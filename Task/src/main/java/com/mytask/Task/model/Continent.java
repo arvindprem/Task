@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +14,7 @@ import lombok.Data;
 
 
 @AllArgsConstructor
+@Document(collection= "continent")
 public class Continent {
 @Id
 	
@@ -23,7 +25,6 @@ public class Continent {
 private List<Country>Country_id;
 	
 }
-
 
 
 
