@@ -14,7 +14,7 @@ import com.mytask.Task.service.ClientDbmanageuserservice;
 @RestController
 public class Logincontroller {
 	@Autowired 
-	ClientDbmanageuserservice userservice;
+	private ClientDbmanageuserservice userservice;
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView login() {
 	    ModelAndView modelAndView = new ModelAndView();
